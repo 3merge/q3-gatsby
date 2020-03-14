@@ -1,0 +1,11 @@
+{
+  "editor.tabSize": 2,
+  "editor.fontSize": 14,
+  "files.exclude": {
+    "**/.cache": true,
+    "**/.git": true,
+    "**/lib/": true,
+    "**/node_modules/": true,
+    "**/public/": true,
+  }
+}

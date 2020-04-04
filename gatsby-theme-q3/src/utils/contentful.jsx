@@ -36,8 +36,10 @@ const imageRender = (node, locale) => {
   return null;
 };
 
-export default (json, locale = 'en-CA') =>
-  documentToReactComponents(json, {
+export default (json, locale = 'en-CA') => {
+  if (!json || !Object.keys(json).length) return null;
+
+  return documentToReactComponents(json, {
     renderMark: {
       [MARKS.BOLD]: (text) => <strong>{text}</strong>,
       [MARKS.ITALIC]: (text) => <i>{text}</i>,
@@ -100,3 +102,4 @@ export default (json, locale = 'en-CA') =>
         imageRender(node, locale),
     },
   });
+};

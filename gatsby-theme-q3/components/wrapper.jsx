@@ -3,8 +3,6 @@ import Provider from 'q3-ui';
 import axios from 'axios';
 import { i18n } from 'q3-ui-locale';
 import PropTypes from 'prop-types';
-import { merge } from 'lodash';
-import { ThemeProvider } from '@material-ui/styles';
 import FormProviders from 'q3-ui-forms';
 import AuthProvider from 'q3-ui-permissions';
 
@@ -32,25 +30,18 @@ const setBaseUrlForRest = (
 };
 
 const Wrapper = ({ children, baseURL, locale, theme }) => {
-  const mergeWithQ3 = React.useCallback(
-    (prevTheme) => merge(prevTheme, theme),
-    [theme],
-  );
-
   React.useEffect(() => {
     setBaseUrlForRest(baseURL);
     registeri18ResourceBundles(locale);
-  }, []);
+  }, [locale, baseURL]);
 
   return (
-    <Provider>
-      <ThemeProvider theme={mergeWithQ3}>
-        <AuthProvider>
-          <FormProviders preventDuplicate>
-            {children}
-          </FormProviders>
-        </AuthProvider>
-      </ThemeProvider>
+    <Provider theme={theme}>
+      <AuthProvider>
+        <FormProviders preventDuplicate>
+          {children}
+        </FormProviders>
+      </AuthProvider>
     </Provider>
   );
 };

@@ -30,10 +30,8 @@ const setBaseUrlForRest = (
 };
 
 const Wrapper = ({ children, baseURL, locale, theme }) => {
-  React.useEffect(() => {
-    setBaseUrlForRest(baseURL);
-    registeri18ResourceBundles(locale);
-  }, [locale, baseURL]);
+  setBaseUrlForRest(baseURL);
+  registeri18ResourceBundles(locale);
 
   return (
     <Provider theme={theme}>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { createMount } from '@material-ui/core/test-utils';
-import mock from './contentful.mock';
-import json from './contentful';
+import mock from '../__mocks__/contentful';
+import { renderRichText } from '../RichText';
 
 let mount;
 let wrapper;
@@ -9,7 +9,7 @@ let wrapper;
 beforeAll(() => {
   mount = createMount();
   // eslint-disable-next-line
-  wrapper = mount(<div>{json(mock.json)}</div>);
+  wrapper = mount(<div>{renderRichText(mock.json)}</div>);
 });
 
 afterAll(() => {

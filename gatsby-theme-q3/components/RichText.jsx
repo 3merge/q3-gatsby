@@ -1,5 +1,6 @@
 import React from 'react';
 import { get } from 'lodash';
+import PropTypes from 'prop-types';
 import Typography from '@material-ui/core/Typography';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
@@ -9,6 +10,11 @@ import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { MARKS, BLOCKS } from '@contentful/rich-text-types';
 
+const isImage = (v) => v === 'image';
+
+const getGroup = (v) =>
+  typeof v === 'string' ? v.split('/')[0] : '';
+
 const imageRender = (node, locale) => {
   const { title, description, file } = get(
     node,
@@ -16,27 +22,21 @@ const imageRender = (node, locale) => {
     {},
   );
 
-  if (!file || !(locale in file)) {
-    return null;
-  }
+  if (!file || !(locale in file)) return null;
 
   const mimeType = file[locale].contentType;
-  const mimeGroup = mimeType.split('/')[0];
+  const mimeGroup = getGroup(mimeType);
 
-  if (mimeGroup === 'image') {
-    return (
-      <img
-        title={title ? title[locale] : null}
-        alt={description ? description[locale] : null}
-        src={file[locale].url}
-      />
-    );
-  }
-
-  return null;
+  return isImage(mimeGroup) ? (
+    <img
+      title={title ? title[locale] : null}
+      alt={description ? description[locale] : null}
+      src={file[locale].url}
+    />
+  ) : null;
 };
 
-export default (json, locale = 'en-CA') => {
+export const renderRichText = (json, locale = 'en-CA') => {
   if (!json || !Object.keys(json).length) return null;
 
   return documentToReactComponents(json, {
@@ -103,3 +103,19 @@ export default (json, locale = 'en-CA') => {
     },
   });
 };
+
+const RichText = ({ json, locale }) => (
+  <div>{renderRichText(json, locale)}</div>
+);
+
+RichText.propTypes = {
+  // eslint-disable-next-line
+  json: PropTypes.object,
+  locale: PropTypes.string,
+};
+
+RichText.defaultProps = {
+  locale: 'en-CA',
+};
+
+export default RichText;

@@ -1,2 +1,6 @@
-export { default as Seo } from './seo';
-export { default as Wrapper } from './wrapper';
+export {
+  default as RichText,
+  renderRichText,
+} from './RichText';
+export { default as SearchEngine } from './SearchEngine';
+export { default as Wrapper } from './Wrapper';

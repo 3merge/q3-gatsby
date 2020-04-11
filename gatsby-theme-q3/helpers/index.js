@@ -1,5 +1,4 @@
-const loadContent = require('./loadContent');
-
+/* eslint-disable global-require */
 module.exports = {
-  loadContent,
+  loadContent: require('./loadContent'),
 };

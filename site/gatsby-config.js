@@ -3,6 +3,7 @@ require('dotenv').config();
 const { loadContent } = require('gatsby-theme-q3/helpers');
 const path = require('path');
 const theme = require('./gatsby-theme');
+// const logo = require('./src/assets/logo.svg');
 
 const {
   CONTENTFUL_ACCESS_TOKEN,
@@ -16,6 +17,7 @@ module.exports = {
       'Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.',
     author: '@gatsbyjs',
     siteUrl: 'https://google.ca',
+    // logo,
   },
   plugins: [
     {

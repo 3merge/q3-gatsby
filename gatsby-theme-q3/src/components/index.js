@@ -1,3 +1,4 @@
+export { default as AdminLoader } from './AdminLoader';
 export {
   default as RichText,
   renderRichText,

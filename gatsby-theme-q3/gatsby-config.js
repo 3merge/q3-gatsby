@@ -5,6 +5,7 @@ module.exports = ({
   title,
   brandingColor,
   icon,
+  netlify,
 }) => {
   if (!contentfulSpaceID || !contentfulAccessToken)
     throw new Error(
@@ -26,6 +27,14 @@ module.exports = ({
       },
     },
   ];
+
+  if (netlify)
+    plugins.push({
+      resolve: 'gatsby-plugin-netlify',
+      options: {
+        generateMatchPathRewrites: true,
+      },
+    });
 
   if (title && brandingColor)
     plugins.push({

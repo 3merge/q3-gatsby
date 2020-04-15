@@ -1,5 +1,5 @@
 import React from 'react';
-import { SearchEngine } from 'gatsby-theme-q3/components';
+import { SearchEngine } from 'gatsby-theme-q3/src/components';
 import { useTranslation } from 'react-i18next';
 import Header from 'q3-ui/lib/header';
 import Button from '@material-ui/core/Button';

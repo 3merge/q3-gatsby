@@ -53,7 +53,7 @@
     "gatsby-transformer-sharp": "^2.4.4",
     "lodash": "^4.17.15",
     "prop-types": "^15.7.2",
-    "q3-admin": "^1.13.22",
+    "q3-admin": "^1.13.27",
     "q3-ui-filters": "^1.13.23",
     "q3-ui-helpers": "^1.13.23",
     "q3-ui-repeater": "^1.13.23"

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from '@reach/router';
+import MuiLink from '@material-ui/core/Link';
 import { Trans, useTranslation } from 'react-i18next';
 import { Login as LoginPreset } from 'q3-ui-forms/lib/presets';
 import Typography from '@material-ui/core/Typography';
@@ -18,16 +19,16 @@ export default () => {
           </Typography>
           <Typography variant="body2" gutterBottom>
             {t('descriptions:login')}
-            <Link to="/password-reset">
+            <MuiLink component={Link} to="/password-reset">
               {t('labels:requestNewPassword')}
-            </Link>
+            </MuiLink>
           </Typography>
           <Typography variant="body2" gutterBottom>
             <Trans i18nKey="descriptions:newUserReverify">
               {t('descriptions:loginReverify')}
-              <Link to="/reverify">
+              <MuiLink component={Link} to="/reverify">
                 {t('labels:reverifyLink')}
-              </Link>
+              </MuiLink>
             </Trans>
           </Typography>
         </>

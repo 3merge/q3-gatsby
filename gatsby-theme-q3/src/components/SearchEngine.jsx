@@ -10,6 +10,7 @@ function SEO({ description, lang, meta, title }) {
         site {
           siteMetadata {
             title
+            brand
             description
           }
         }
@@ -26,7 +27,7 @@ function SEO({ description, lang, meta, title }) {
         lang,
       }}
       title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
+      titleTemplate={`%s | ${site.siteMetadata.brand}`}
       meta={[
         {
           name: 'description',

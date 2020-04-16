@@ -1,4 +1,5 @@
 export { default as AdminLoader } from './AdminLoader';
+export { default as FormBox } from './FormBox';
 export {
   default as RichText,
   renderRichText,

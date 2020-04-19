@@ -1,4 +1,11 @@
-/* eslint-disable global-require */
+const loadContent = require('./loadContent');
+const {
+  appendSiblingsToContext,
+  paginateArchiveContext,
+} = require('./pagination');
+
 module.exports = {
-  loadContent: require('./loadContent'),
+  loadContent,
+  appendSiblingsToContext,
+  paginateArchiveContext,
 };

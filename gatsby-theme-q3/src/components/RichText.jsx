@@ -1,14 +1,23 @@
 import React from 'react';
 import { get } from 'lodash';
 import PropTypes from 'prop-types';
+import { useStaticQuery, graphql, Link } from 'gatsby';
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
+import CardActionArea from '@material-ui/core/CardActionArea';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import Divider from '@material-ui/core/Divider';
 import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import { MARKS, BLOCKS } from '@contentful/rich-text-types';
+import {
+  MARKS,
+  BLOCKS,
+  INLINES,
+} from '@contentful/rich-text-types';
 
 const isImage = (v) => v === 'image';
 
@@ -36,8 +45,18 @@ const imageRender = (node, locale) => {
   ) : null;
 };
 
-export const renderRichText = (json, locale = 'en-CA') => {
+export const renderRichText = (
+  json,
+  locale = 'en-CA',
+  sitemap = {},
+) => {
   if (!json || !Object.keys(json).length) return null;
+
+  const getFromSitemap = (node) =>
+    get(
+      sitemap,
+      get(node, 'data.target.sys.contentful_id'),
+    );
 
   return documentToReactComponents(json, {
     renderMark: {
@@ -100,14 +119,73 @@ export const renderRichText = (json, locale = 'en-CA') => {
       ),
       [BLOCKS.EMBEDDED_ASSET]: (node) =>
         imageRender(node, locale),
+      [BLOCKS.EMBEDDED_ENTRY]: () => {
+        return null;
+      },
+      [INLINES.EMBEDDED_ENTRY]: (node) => {
+        const path = getFromSitemap(node);
+
+        return path ? (
+          <Box my={2}>
+            <Card component="aside">
+              <CardActionArea component={Link} to={path}>
+                <CardContent>
+                  <Box p={2}>
+                    <Typography
+                      variant="body2"
+                      component="h3"
+                      gutterBottom
+                    >
+                      {get(
+                        node,
+                        `data.target.fields.title.${locale}`,
+                      )}
+                    </Typography>
+                    <Typography component="small">
+                      {get(
+                        node,
+                        `data.target.fields.description.${locale}`,
+                      )}
+                    </Typography>
+                  </Box>
+                </CardContent>
+              </CardActionArea>
+            </Card>
+          </Box>
+        ) : null;
+      },
     },
   });
 };
 
-const RichText = ({ json, locale }) => (
-  <div>{renderRichText(json, locale)}</div>
-);
+const RichText = ({ json, locale }) => {
+  const data = useStaticQuery(graphql`
+    {
+      allSitePage {
+        nodes {
+          path
+          context {
+            contentful_id
+          }
+        }
+      }
+    }
+  `);
 
+  return (
+    <div>
+      {renderRichText(
+        json,
+        locale,
+        data.allSitePage.nodes.reduce((acc, next, i) => {
+          acc[get(next, 'context.contentful_id', i)] =
+            next.path;
+          return acc;
+        }, {}),
+      )}
+    </div>
+  );
+};
 RichText.propTypes = {
   // eslint-disable-next-line
   json: PropTypes.object,

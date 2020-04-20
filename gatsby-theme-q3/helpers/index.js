@@ -1,4 +1,17 @@
-/* eslint-disable global-require */
+const ArchiveBuilder = require('./archive');
+const loadContent = require('./loadContent');
+const {
+  appendSiblingsToContext,
+  paginateArchiveContext,
+} = require('./pagination');
+const slug = require('./slug');
+const slugType = require('./slugType');
+
 module.exports = {
-  loadContent: require('./loadContent'),
+  ArchiveBuilder,
+  loadContent,
+  appendSiblingsToContext,
+  paginateArchiveContext,
+  slug,
+  slugType,
 };

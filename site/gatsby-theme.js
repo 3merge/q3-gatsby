@@ -33,15 +33,6 @@ module.exports = {
     },
   },
   overrides: {
-    MuiBreadcrumbs: {
-      li: {
-        fontSize: '1rem',
-        '& *': {
-          color: '#FFF',
-          fontSize: 'inherit !important',
-        },
-      },
-    },
     MuiListSubheader: {
       sticky: {
         fontSize: '1rem',

@@ -88,6 +88,7 @@ const paginateArchiveContext = (entries = [], pathName) => {
     output.push({
       limit: postsPerPage,
       skip: i * postsPerPage,
+      total: numPages,
       pageNum: i,
       path,
       next,

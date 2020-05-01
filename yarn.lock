@@ -4529,14 +4529,6 @@ create-react-class@^15.6.0:
     loose-envify "^1.3.1"
     object-assign "^4.1.1"
 
-create-react-context@0.3.0:
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/create-react-context/-/create-react-context-0.3.0.tgz#546dede9dc422def0d3fc2fe03afe0bc0f4f7d8c"
-  integrity sha512-dNldIoSuNSvlTJ7slIKC/ZFGKexBMBrrcc+TTe1NdmROnaASuLPvqpwj9v4XS4uXZ8+YPu0sNmShX2rXI5LNsw==
-  dependencies:
-    gud "^1.0.0"
-    warning "^4.0.3"
-
 create-react-context@^0.2.1:
   version "0.2.3"
   resolved "https://registry.yarnpkg.com/create-react-context/-/create-react-context-0.2.3.tgz#9ec140a6914a22ef04b8b09b7771de89567cb6f3"
@@ -12744,10 +12736,10 @@ punycode@^2.1.0, punycode@^2.1.1:
   resolved "https://registry.yarnpkg.com/punycode/-/punycode-2.1.1.tgz#b58b010ac40c22c5657616c8d2c2c02c7bf479ec"
   integrity sha512-XRsRjdf+j5ml+y/6GKHPZbrF/8p2Yga0JPtdqTIY2Xe5ohJPD9saDJJLPvp9+NSBprVvevdXZybnj2cv8OEd0A==
 
-q3-admin@^1.14.6:
-  version "1.14.6"
-  resolved "https://registry.yarnpkg.com/q3-admin/-/q3-admin-1.14.6.tgz#c410f22edc858a5beb0b4d78f0f9f5a788755b03"
-  integrity sha512-Lyv5OsnueT1Qt6lugllpp/DfyHHlgPOt5Ppr2RLnLSFOYnP6RWfpbdNvsg4508jqoleS89MY0YtQdneNfDrZvg==
+q3-admin@^1.15.0:
+  version "1.15.0"
+  resolved "https://registry.yarnpkg.com/q3-admin/-/q3-admin-1.15.0.tgz#877f86d6289d1ff54e3e94e7ce857ccc1f776541"
+  integrity sha512-k8k/G1iK2VeMBSDGEug/xiSu4d0+xr32t/mX1xkOX0KaKn8hBzwu8QxKnBt/OuBIThHb8GZ7Ha/OLAm9/KN+sA==
   dependencies:
     clsx "^1.1.0"
     comparisons "^2.2.5"
@@ -12765,6 +12757,20 @@ q3-admin@^1.14.6:
     with-location "^1.3.6"
     yup "^0.27.0"
 
+q3-components@^1.15.4:
+  version "1.15.4"
+  resolved "https://registry.yarnpkg.com/q3-components/-/q3-components-1.15.4.tgz#c391f6164514a8ba810ba8d3e500326385b4338b"
+  integrity sha512-5SXPeNuH0JFWPLxVsqqmdmHDU1fTYFDwniWdYYvYkzwkMBF//khuf/mh1RxdKP+ht6++6d1TcN9DyKJe81YgEg==
+  dependencies:
+    axios "^0.19.0"
+    class-names "^1.0.0"
+    lodash "^4.17.15"
+    moment "^2.24.0"
+    q3-ui-forms "^1.15.4"
+    react-i18next "11.3.1"
+    useful-state "^1.2.0"
+    yup "^0.27.0"
+
 q3-ui-assets@^1.14.3:
   version "1.14.3"
   resolved "https://registry.yarnpkg.com/q3-ui-assets/-/q3-ui-assets-1.14.3.tgz#dca4068b430430f3fe291786fb9c54730f4dd49b"
@@ -12772,15 +12778,17 @@ q3-ui-assets@^1.14.3:
   dependencies:
     lodash.get "^4.4.2"
 
-q3-ui-cart@^1.14.3:
-  version "1.14.3"
-  resolved "https://registry.yarnpkg.com/q3-ui-cart/-/q3-ui-cart-1.14.3.tgz#6109a7fa4b84fc77bfe5d5318d82b7149560016e"
-  integrity sha512-3CnqP0hR79PMzx60XMqyr2PMyigdacAdXPPA4nZKaAk5/W7F+Ze+YVL5zBgYTSTGvqtSjL1lYhTkw//5E99ulQ==
+q3-ui-cart@^1.15.4:
+  version "1.15.4"
+  resolved "https://registry.yarnpkg.com/q3-ui-cart/-/q3-ui-cart-1.15.4.tgz#cc03f3ec64950f68d37660e973a1bf1cd9194b3c"
+  integrity sha512-Z1UIDUsuLZJbN7jnZc4EiWYUgpNSM8FyJ38+elRujYqAeMekMcy97WEx7q37Pk1lESfTlp0oPZOKJyS0+Q34+Q==
   dependencies:
     "@material-ui/core" "^4.5.1"
     "@material-ui/icons" "^4.5.1"
     "@material-ui/lab" "^4.0.0-alpha.31"
     class-names "^1.0.0"
+    lodash "^4.17.15"
+    q3-components "^1.15.4"
     q3-ui-permissions "^1.13.17"
     react-i18next "11.3.1"
     useful-state "^1.2.0"
@@ -12825,10 +12833,10 @@ q3-ui-exports@^1.14.6:
     react-json-to-csv "^1.0.4"
     useful-state "^1.2.0"
 
-q3-ui-filters@^1.14.6:
-  version "1.14.6"
-  resolved "https://registry.yarnpkg.com/q3-ui-filters/-/q3-ui-filters-1.14.6.tgz#ff638b35d0568913a21012836b772a84194ea29e"
-  integrity sha512-x+YaAWbG8czJKwWptHT904EmHtLxL+Om3ZTckiRa4XbMIXQHE9LzI34HSS/UpfUAc05blwG9lzW4U96RROwObg==
+q3-ui-filters@^1.15.4:
+  version "1.15.4"
+  resolved "https://registry.yarnpkg.com/q3-ui-filters/-/q3-ui-filters-1.15.4.tgz#3ffb5cf3b160772e9e18fbb1c631092454cc42eb"
+  integrity sha512-Icqf5ZAexqpnkNNYeckZdkoJ+2GVGVjs0f3zhmXrwodAM1RCZs/18nuAar2pc8fhpT+Xg73Ek8HWHbl3MK3r1g==
   dependencies:
     "@material-ui/core" "^4.5.1"
     "@material-ui/icons" "^4.5.1"
@@ -12838,14 +12846,14 @@ q3-ui-filters@^1.14.6:
     decode-uri-component "^0.2.0"
     formik "^2.0.4"
     lodash "^4.17.15"
-    q3-ui-helpers "^1.14.6"
+    q3-ui-helpers "^1.15.4"
     react-i18next "11.3.1"
     with-location "^1.3.6"
 
-q3-ui-forms@^1.14.7:
-  version "1.14.7"
-  resolved "https://registry.yarnpkg.com/q3-ui-forms/-/q3-ui-forms-1.14.7.tgz#e415c5390536680fa7c2c1b961f17f9b51fa29e8"
-  integrity sha512-GZZ7ssOrtou96TfJaccaFsFXLJSQI86aB1iq/wYTyjdbXExCaYdrLha79mNv0HJZAbUPfiyz+eTL7I0vcfY4Ug==
+q3-ui-forms@^1.15.4:
+  version "1.15.4"
+  resolved "https://registry.yarnpkg.com/q3-ui-forms/-/q3-ui-forms-1.15.4.tgz#4eef4c15019bdfb3b6c4349c81fea9531acdeb65"
+  integrity sha512-Dyl0TR7Z5CA/BwTugMn3J3KGkbKMIkBhpIy6jj53M4sx1lvVZU/LRNaYtrVmSrSjHXgxJRnUuGFDpyZ0FjvByQ==
   dependencies:
     "@material-ui/core" "^4.5.1"
     "@material-ui/icons" "^4.5.1"
@@ -12871,10 +12879,10 @@ q3-ui-forms@^1.14.7:
     with-location "^1.3.6"
     yup "^0.27.0"
 
-q3-ui-helpers@^1.14.6:
-  version "1.14.6"
-  resolved "https://registry.yarnpkg.com/q3-ui-helpers/-/q3-ui-helpers-1.14.6.tgz#e00d58c1541e4fb1494a37df62e956f5dc249762"
-  integrity sha512-7VzNqdEB9LW+jmwOvUMqZoBK8y7gHydqR4ZJonfVJS4HHm7fcblcGcTFsieZpil5kxexVZfLOLnzWYSa/hHTiQ==
+q3-ui-helpers@^1.15.4:
+  version "1.15.4"
+  resolved "https://registry.yarnpkg.com/q3-ui-helpers/-/q3-ui-helpers-1.15.4.tgz#9710db331ff5a37c29f5749a3d182f0d90ef724b"
+  integrity sha512-xL7wCcf+TpxdvzpyFkBkGRBrP8babaY8l5bIy2Ocdh9o5Vb/vg/OqBEphWt3itec1VOPut/EgWkQJ4cNXs7gaw==
   dependencies:
     "@reach/router" "^1.2.1"
     is-glob "^4.0.1"
@@ -12882,10 +12890,10 @@ q3-ui-helpers@^1.14.6:
     minimatch "^3.0.4"
     moment "^2.24.0"
 
-q3-ui-locale@^1.14.7:
-  version "1.14.7"
-  resolved "https://registry.yarnpkg.com/q3-ui-locale/-/q3-ui-locale-1.14.7.tgz#c50763a7e567168220a27786acdee3e6e8c2aa16"
-  integrity sha512-/Xt/EZaVhgXiBUHHbbcYI9Atg8nTSzq8q/42MVKwmoeA7aVefpBc1aAPdUXvqGnq42eHS3nx2Ax0HOhiuv2R4w==
+q3-ui-locale@^1.15.4:
+  version "1.15.4"
+  resolved "https://registry.yarnpkg.com/q3-ui-locale/-/q3-ui-locale-1.15.4.tgz#a741a7ae47b0f7c358804a3fabbc3d6002307493"
+  integrity sha512-+tcmNyjJ5m0UFfDLj8jR6hyIJt+6EU+gvuKjOH/yG1Kkksrw342Ni6pEQ1eVrPAo4B5QfPnq+HQrE9XKoe4Slw==
   dependencies:
     prop-types "^15.7.2"
     react "^16.10.2"
@@ -12899,10 +12907,10 @@ q3-ui-permissions@^1.13.13, q3-ui-permissions@^1.13.17:
     minimatch "^3.0.4"
     prop-types "^15.7.2"
 
-q3-ui-repeater@^1.14.7:
-  version "1.14.7"
-  resolved "https://registry.yarnpkg.com/q3-ui-repeater/-/q3-ui-repeater-1.14.7.tgz#1b83234e1ab5ed127436365150ea7a5e69123212"
-  integrity sha512-rGOQSAXpZsqV7cUwNlv4nCGizF1HUAk16vlcwm0ZzMUQ1xEFROipZtGT+AuCT8bnnxfdUzz+pPrBlydTZ87Wow==
+q3-ui-repeater@^1.15.4:
+  version "1.15.4"
+  resolved "https://registry.yarnpkg.com/q3-ui-repeater/-/q3-ui-repeater-1.15.4.tgz#e1395b98fc2e3768c50630392ca6d5221082742a"
+  integrity sha512-1PdQuNgI5u9nLdDAqJk5OQzDIthQboXb8I8yVC/V6tqxDmRUxbkqadZRK5W6etJ5HJxS2RhFHrgx9nL0MWPfqg==
   dependencies:
     "@material-ui/core" "^4.5.1"
     "@material-ui/icons" "^4.5.1"
@@ -12910,9 +12918,10 @@ q3-ui-repeater@^1.14.7:
     "@material-ui/pickers" "^3.2.8"
     axios "^0.19.0"
     lodash "^4.17.15"
+    q3-components "^1.15.4"
     q3-ui-dialog "^1.14.6"
     q3-ui-exports "^1.14.6"
-    q3-ui-forms "^1.14.7"
+    q3-ui-forms "^1.15.4"
     react-i18next "11.3.1"
     useful-state "^1.2.0"
 
@@ -12934,10 +12943,10 @@ q3-ui-test-utils@^1.11.2:
     enzyme "^3.10.0"
     enzyme-adapter-react-16 "^1.14.0"
 
-q3-ui@^1.14.7:
-  version "1.14.7"
-  resolved "https://registry.yarnpkg.com/q3-ui/-/q3-ui-1.14.7.tgz#f2e0250b85af5359d026645435c433120342103c"
-  integrity sha512-UVEghc/+yCWpM2ZBK57PQnWw6syAoFgqc0pQqjnx/Et5zqMrO2ZP6kmknEcBNswYoGX1CYHV1OgCxBbc1QcUKg==
+q3-ui@^1.15.4:
+  version "1.15.4"
+  resolved "https://registry.yarnpkg.com/q3-ui/-/q3-ui-1.15.4.tgz#4b54087f017146149d64a50281f8da7d9d625c46"
+  integrity sha512-YGmY3TKx9usTFpA55g46rN23P5TcCMtF3mt0I7c0OqvFgUW6AdDrmQEsyZg76AmJlC6nvCn46SLVu3uxWqyiKQ==
   dependencies:
     "@amcharts/amcharts4" "^4.9.0"
     "@date-io/moment" "^1.3.9"
@@ -12957,7 +12966,7 @@ q3-ui@^1.14.7:
     moment "^2.24.0"
     prop-types "^15.7.2"
     q3-ui-assets "^1.14.3"
-    q3-ui-locale "^1.14.7"
+    q3-ui-locale "^1.15.4"
     query-string "^6.8.3"
     react-content-loader "^4.2.2"
     react-credit-cards "^0.8.0"
@@ -16400,13 +16409,6 @@ warning@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/warning/-/warning-3.0.0.tgz#32e5377cb572de4ab04753bdf8821c01ed605b7c"
   integrity sha1-MuU3fLVy3kqwR1O9+IIcAe1gW3w=
-  dependencies:
-    loose-envify "^1.0.0"
-
-warning@^4.0.3:
-  version "4.0.3"
-  resolved "https://registry.yarnpkg.com/warning/-/warning-4.0.3.tgz#16e9e077eb8a86d6af7d64aa1e05fd85b4678ca3"
-  integrity sha512-rpJyN222KWIvHJ/F53XSZv0Zl/accqHR8et1kpaMTD/fLCRxtV8iX8czMzY7sVZupTI3zcUTg8eycS2kNF9l6w==
   dependencies:
     loose-envify "^1.0.0"
 
